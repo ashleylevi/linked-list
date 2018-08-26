@@ -16,13 +16,14 @@ enterButton.addEventListener('click', createBookmark)
 function createBookmark(event) {
   event.preventDefault();
   var bookmark = document.createElement('div');
-  bookmark.innerHTML = `<h1 >${websiteTitle.value}</h1> 
-                        <hr />
-                        <h2><a href="${websiteUrl.value}">${websiteUrl.value}</a></h2>
-                        <hr />
-                        <button class="read">Read</button>
-                        <button class="delete">Delete</button>`
-  document.getElementById('output-section').appendChild(bookmark);  
+  bookmark.innerHTML = 
+   `<h1 >${websiteTitle.value}</h1> 
+   <hr/>
+   <h2><a href="${websiteUrl.value}">${websiteUrl.value}</a></h2>
+   <hr/>
+   <button class="read">Read</button>
+   <button class="delete">Delete</button>`
+   document.getElementById('output-section').appendChild(bookmark);  
 }
 
 console.log(createBookmark);
