@@ -104,7 +104,7 @@ h2 {
   margin: 10px;
 }
 
-.read {
+.unread {
   font-size: 11px;
   color: #455A64;
   text-decoration: underline #F2F4F4;
@@ -159,6 +159,16 @@ div {
   border: 2px solid #607d8b;
   margin: 2rem;
   width: 85%;
-  overflowX: scroll
+  overflow-x: scroll;
+}
+
+
+
+.read {
+  color: #F05A28;
+  font-size: 11px;
+  border: none;
+  margin: 10px;
+  font-weight: 800;
 }
 
