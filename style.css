@@ -18,10 +18,8 @@ body {
 }
 
 .input-section {
- /*background-color: #455A64;*/
  text-align: center;
 }
-
 
 .title {
  color: #FFF;
@@ -162,7 +160,19 @@ div {
  overflow-x: scroll;
 }
 
+.bookmark-count, .read-count {
+  color: white;
+  font-weight: 400;
+}
 
+.read-count {
+  margin-bottom: 1rem;
+}
+
+span {
+  color: #FFC107;
+  font-weight: 800;
+}
 
 .read {
  color: #F05A28;
