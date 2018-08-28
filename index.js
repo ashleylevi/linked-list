@@ -68,10 +68,15 @@ function enableSubmitButton() {
 
 
 function deleteBookmark(event) {
-   if (event.target.className === 'delete') {
+   if (event.target.className === 'read' && event.target.className === 'delete') {
    event.target.parentNode.remove();
    bookmarkCount --;
- }
+   readcount--;
+   } else if {
+   event.target.parentNode.remove();
+   bookmarkCount --;
+   }
  bookmarkNumber.innerText = bookmarkCount;
-};
+
+
 
