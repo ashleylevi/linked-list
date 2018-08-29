@@ -24,7 +24,7 @@ function createBookmark(event) {
    bookmark.innerHTML =
    `<h1>${websiteTitle.value}</h1>
    <hr />
-   <h2><a href="${websiteUrl.value}" target="_blank">${websiteUrl.value}</a></h2>
+   <h2><a href="https://${websiteUrl.value}" target="_blank">${websiteUrl.value}</a></h2>
    <hr />
    <button class='unread'>Read</button>
    <button class="delete">Delete</button>`
@@ -33,21 +33,18 @@ function createBookmark(event) {
    var deleteButton = document.querySelector('.delete');
    deleteButton.addEventListener('click', deleteBookmark);
    bookmarkCount++;
-   console.log(bookmarkCount);
    bookmarkNumber.innerText = bookmarkCount;
+   debugger
 };
 
 function markAsRead(event) {
-  console.log(event.target.className)
-  if (event.target.className === 'read') {
-   event.target.className = 'unread';
-   readCount--;
-  } 
-   else if (event.target.className === 'unread') {
+  if (event.target.className === 'unread') {
      event.target.className = 'read';
      readCount++;
-     // event.target.parentNode.classList.toggle('read-card')
-     console.log(readCount);
+  } 
+   else if (event.target.className === 'read') {
+   event.target.className = 'unread';
+   readCount--;
    } 
    event.target.parentNode.classList.toggle('read-bookmark')
    readNumber.innerText = readCount;
@@ -62,7 +59,6 @@ function enableSubmitButton() {
 };
 
 function deleteBookmark(event) {
-  console.log(event.target.className)
   if (event.target.className === 'delete' && event.target.parentNode.classList.contains('read-bookmark')) {
     event.target.parentNode.remove();
     bookmarkCount--;
@@ -70,7 +66,6 @@ function deleteBookmark(event) {
   } else if (event.target.className === 'delete') {
     event.target.parentNode.remove();
     bookmarkCount--;
-    console.log('byeeeeee')
   } 
     bookmarkNumber.innerText = bookmarkCount;
     readNumber.innerText = readCount;
@@ -95,5 +90,4 @@ function deleteBookmark(event) {
 //   bookmarkNumber.innerText = bookmarkCount;
 //   readNumber.innerText = readCount;
 // }
-
 
