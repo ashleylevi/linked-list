@@ -22,6 +22,7 @@ body {
  text-align: center;
 }
 
+
 /*linked-list title*/
 .title {
  color: #FFF;
@@ -184,6 +185,7 @@ read labels*/
 
 /*bookmarks created and bookmarks
 read numerical count*/
+
 span {
   color: #FFC107;
   font-weight: 800;
