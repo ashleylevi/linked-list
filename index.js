@@ -25,14 +25,15 @@ function createBookmark(event) {
    <hr />
    <h2><a href="${websiteUrl.value}" target="_blank">${websiteUrl.value}</a></h2>
    <hr />
-   <button class='unread'>Read</button>
-   <button class="delete">Delete</button>`
+   <button aria-label="read" class='unread'>Read</button>
+   <button aria-label="delete" class="delete">Delete</button>`
    document.getElementById('output-section').prepend(bookmark);
    var readButton = document.querySelector('.unread');
    var deleteButton = document.querySelector('.delete');
    deleteButton.addEventListener('click', deleteBookmark);
    bookmarkCount++;
    bookmarkNumber.innerText = bookmarkCount;
+   clearInputs();
 };
 
 function markAsRead(event) {
@@ -69,3 +70,10 @@ function deleteBookmark(event) {
     readNumber.innerText = readCount;
 };
 
+
+function clearInputs() {
+  websiteTitle.value = '';
+  websiteUrl.value = '';
+  enableSubmitButton()
+
+}

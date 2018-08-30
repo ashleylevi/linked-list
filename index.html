@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>Linked list</title>
- <link rel="stylesheet" type="text/css" href="style.css">
- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linked list</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
  <!--  left sife of the page -->
- <section class="input-section">
+<section class="input-section">
  <header>
-   <p class="title">Linked</p><img src="pictures/linked-list-logo.svg"><p class="title">List</p>
+   <p class="title">Linked</p><img src="pictures/linked-list-logo.svg" alt="logo"><p class="title">List</p>
  </header>
  <form>
-   <input type="text" class="website-title" placeholder="Website Title" required>
-   <input type="text" class="website-url" required pattern="https?://.+" placeholder="Website URL">
-   <button class="enter-button">Enter</button>
+   <input type="text" aria-label="website title input" class="website-title" placeholder="Website Title" required>
+   <input type="text" aria-label="website url input" class="website-url" required pattern="https?://.+" placeholder="Website URL">
+   <button aria-label="enter" class="enter-button" disabled>Enter</button>
  </form>
  <p class="bookmark-count">Bookmarks Created: <span class="bookmark-number">0</span></p>
  <p class="read-count">Bookmarks Read: <span class="read-number">0</span></p>
 </section>
 <!-- right side of the page -->
-<section id="output-section" disabled>
+<section id="output-section">
 </section>
 <script src="index.js"></script>
 </body>
