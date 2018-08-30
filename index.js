@@ -10,7 +10,6 @@ var outputSection = document.querySelector('#output-section')
 var readCount = 0;
 var bookmarkCount = 0;
 
-
 // event listeners
 websiteTitle.addEventListener('keyup', enableSubmitButton);
 websiteUrl.addEventListener('keyup', enableSubmitButton);
@@ -24,27 +23,27 @@ function createBookmark(event) {
    bookmark.innerHTML =
    `<h1>${websiteTitle.value}</h1>
    <hr />
-   <h2><a href="https://${websiteUrl.value}" target="_blank">${websiteUrl.value}</a></h2>
+   <h2><a href="${websiteUrl.value}" target="_blank">${websiteUrl.value}</a></h2>
    <hr />
-   <button class='unread'>Read</button>
-   <button class="delete">Delete</button>`
+   <button aria-label="read" class='unread'>Read</button>
+   <button aria-label="delete" class="delete">Delete</button>`
    document.getElementById('output-section').prepend(bookmark);
    var readButton = document.querySelector('.unread');
    var deleteButton = document.querySelector('.delete');
    deleteButton.addEventListener('click', deleteBookmark);
    bookmarkCount++;
    bookmarkNumber.innerText = bookmarkCount;
-   debugger
+   clearInputs();
 };
 
 function markAsRead(event) {
-  if (event.target.className === 'unread') {
-     event.target.className = 'read';
-     readCount++;
-  } 
-   else if (event.target.className === 'read') {
+  if (event.target.className === 'read') {
    event.target.className = 'unread';
    readCount--;
+  } 
+   else if (event.target.className === 'unread') {
+     event.target.className = 'read';
+     readCount++;
    } 
    event.target.parentNode.classList.toggle('read-bookmark')
    readNumber.innerText = readCount;
@@ -71,23 +70,10 @@ function deleteBookmark(event) {
     readNumber.innerText = readCount;
 };
 
-// function deleteBookmark(event) {
-//   var deleteBtn = event.target;
-//   var card = event.target.parentNode;
 
-//   if (deleteBtn.className === 'delete' && card.classList.contains('read-card')) {
-//     card.remove();
-//     bookmarkCount--;
-//     readCount--;
-//   } else if (deleteBtn.className === 'delete') {
-//     card.remove();
-//     bookmarkCount--;
-//   } 
-//   updateCounter();
-// };
+function clearInputs() {
+  websiteTitle.value = '';
+  websiteUrl.value = '';
+  enableSubmitButton()
 
-// function updateCounter() {
-//   bookmarkNumber.innerText = bookmarkCount;
-//   readNumber.innerText = readCount;
-// }
-
+}

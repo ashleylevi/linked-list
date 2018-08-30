@@ -4,28 +4,31 @@
 }
 
 body {
- font-family: 'Open Sans', sans-serif;
+ background-color: #455A64;
  display: grid;
  grid-template-columns: 1fr 1fr;
- background-color: #455A64;
+ font-family: 'Open Sans', sans-serif;
 }
 
 @media screen and (max-width: 650px) {
 body {
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr;
+  grid-template-rows: .5fr 1fr;
 }
 }
 
+/*left side of page*/
 .input-section {
  text-align: center;
 }
 
+
+/*linked-list title*/
 .title {
  color: #FFF;
- font-weight: 800;
- font-size: 60px;
  display: inline-block;
+ font-size: 60px;
+ font-weight: 800;
  margin-bottom: 50px;
  margin-left: 20px;
  margin-top: 150px;
@@ -33,12 +36,13 @@ body {
 }
 
 img {
- width: 5rem;
  display: inline-block;
  margin-left: 20px;
  margin-right: 1px;
+ width: 5rem;
 }
 
+/*form input fields*/
 input {
  width: 450px;
  height: 35px;
@@ -47,119 +51,129 @@ input {
  padding-bottom: 0px;
 }
 
+/*website-title input field*/
 .website-title {
  margin-top: 0px;
 }
 
 ::placeholder {
+ color: #BCBEC0;
  font-size: 30px;
  font-weight: 300;
- color: #BCBEC0;
  padding-left: 10px;
  }
 
+/*enter button*/
 .enter-button {
- width: 455px;
- height: 45px;
- margin: 20px;
+ background-color: #FFC107;
+ border-color: #FFC107;
+ border-style: solid;
+ border-width: 1px;
+ color: #FFF;
  font-size: 20px;
  font-weight: 800;
- color: #FFF;
- background-color: #FFC107;
- border-style: solid;
- border-color: #FFC107;
- border-width: 1px;
+ height: 45px;
+ margin: 20px;
+ width: 455px;
 }
 
-button:hover {
+.enter-button:hover {
  background-color: #FFD773;
- border-style: solid;
  border-color: #FFD773;
+ border-style: solid;
  border-width: 1px;
 }
 
+/*right side of the page*/
 #output-section {
 background-color: #cfd8dc;
 height: 100vh;
 overflow-y: scroll;
 }
 
+/*bookmark element*/
 div {
-background-color: #fff;
-border: 5px solid #607d8b;
-margin: 2rem;
-width: 20rem;
+ background: #fff;
+ border: 2px solid #607d8b;
+ margin: 2rem;
+ overflow-x: scroll;
+ width: 85%;
 }
 
+
+/*bookmark h1*/
 h1 {
  color: #455A64;
  margin: 10px;
 }
 
+/*bookmark h2*/
 h2 {
- font-weight: 400;
  color: #607D8B;
+ font-weight: 400;
  margin: 10px;
 }
 
+/*default styling for read button
+on bookmark*/
 .unread {
- font-size: 11px;
- color: #455A64;
- text-decoration: underline #F2F4F4;
  border: none;
+ color: #455A64;
+ font-size: 11px;
  margin: 10px;
+ text-decoration: underline #F2F4F4;
 }
 
+/*delete button on bookmark*/
 .delete {
- font-size: 11px;
- color: #455A64;
- text-decoration: underline #F2F4F4;
  border: none;
- margin: 10px;
+ color: #455A64;
  float: right;
+ font-size: 11px;
+ margin: 10px;
+ text-decoration: underline #F2F4F4;
 }
 
-.read:hover {
- text-decoration: underline #FFC107;
- background-color: #FFF;
+.unread:hover {
+ background-color: none;
  border: none;
+ font-weight: 800;
+ text-decoration: underline;
+ text-decoration-color: #FFC107;
 
 }
 
 .delete:hover {
- text-decoration: underline #FFC107;
  background-color: #FFF;
  border: none;
+ text-decoration: underline;
+ text-decoration-color: #FFC107;
 }
 
+/*line on bookmark*/
 hr {
- margin: 10px;
  border: 1px solid #cfd8dc;
+ margin: 10px;
 
 }
 
+/*link on bookmark*/
 a:link {
- font-weight: 400;
  color: #607D8B;
+ font-weight: 400;
  margin: 10px;
 
 }
 
 a:hover {
  color: #455A64;
+ font-weight: 800;
  text-decoration: underline;
  text-decoration-color: #FFC107;
- font-weight: 800;
 }
 
-div {
- background: #fff;
- border: 2px solid #607d8b;
- margin: 2rem;
- width: 85%;
- overflow-x: scroll;
-}
-
+/*bookmarks created and bookmarks
+read labels*/
 .bookmark-count, .read-count {
   color: white;
   font-weight: 400;
@@ -169,15 +183,24 @@ div {
   margin-bottom: 1rem;
 }
 
+/*bookmarks created and bookmarks
+read numerical count*/
+
 span {
   color: #FFC107;
   font-weight: 800;
 }
 
+/*styling for read button when 
+clicked to read*/
 .read {
+ border: none;
  color: #F05A28;
  font-size: 11px;
- border: none;
- margin: 10px;
  font-weight: 800;
+ margin: 10px;
+}
+
+div.read-bookmark {
+  background-color: #f2f4f4;
 }
